@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Assignment 2
 permalink: /assignment2/
 ---
