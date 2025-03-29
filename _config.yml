@@ -1,0 +1,13 @@
+title: My Visualization Site
+email: chinmay@example.com
+description: >- 
+  A collection of my data stories and visualizations built for my course.
+baseurl: "" 
+url: "https://chinmay921.github.io"
+author: Chinmay Dongarkar
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
