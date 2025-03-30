@@ -1,22 +1,47 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-  </head>
-  <body>
-    <!-- 🔧 TEST LINE -->
-    <p style="color: red; font-weight: bold;">🔧 This layout is working!</p>
-
-    {% include header.html %}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
-
-    {% include footer.html %}
-  </body>
-</html>
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    line-height: 1.7;
+  }
+  
+  h1, h2, h3 {
+    color: #d32f2f; /* Golden Gate red */
+    margin-top: 2rem;
+  }
+  
+  a {
+    color: #1565c0; /* Cool blue */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  code {
+    background-color: #f2f2f2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 90%;
+  }
+  
+  .wrapper {
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  blockquote {
+    font-style: italic;
+    color: #777;
+    border-left: 4px solid #d32f2f;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+  }
+  
