@@ -1,29 +1,70 @@
+<!-- _layouts/default.html -->
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} | {{ site.title }}</title>
-
-  <!-- Include Minima's default head content -->
-  {% include head.html %}
-
-  <!-- ✅ Custom stylesheet -->
+  <title>{{ page.title }} | When SF is Most Dangerous?</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-
 </head>
-
 <body>
-  <!-- Header -->
-  {% include header.html %}
 
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      {{ content }}
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">📊 When SF is Most Dangerous?</h1>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/story">Story</a>
+        <a href="/visuals">Visuals</a>
+        <a href="/insights">Insights</a>
+        <a href="/about">About</a>
+      </nav>
     </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero">
+      <div class="overlay">
+        <h2>Explore San Francisco's crime patterns like never before</h2>
+        <p>Uncover the hours, hotspots, and trends that make SF most dangerous</p>
+      </div>
+    </section>
+
+    <section class="story-section">
+      <div class="container">
+        {{ content }}
+      </div>
+    </section>
+
+    <section class="visual-section">
+      <div class="container">
+        <h2>📊 Visualization 1: Crime Over Time</h2>
+        <img src="/assets/images/placeholder-bar.png" alt="Bar chart placeholder" class="viz-img">
+      </div>
+    </section>
+
+    <section class="visual-section">
+      <div class="container">
+        <h2>🗺️ Visualization 2: SF Crime Map</h2>
+        <img src="/assets/images/placeholder-map.png" alt="Map chart placeholder" class="viz-img">
+      </div>
+    </section>
+
+    <section class="visual-section">
+      <div class="container">
+        <h2>🎛️ Visualization 3: Interactive Insights</h2>
+        <div class="bokeh-placeholder">
+          <!-- Bokeh HTML or iframe will be injected here -->
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  {% include footer.html %}
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; {{ site.time | date: '%Y' }} Chinmay Dongarkar | A DTU Data Story Project</p>
+    </div>
+  </footer>
+
 </body>
 </html>
