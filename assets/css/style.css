@@ -1,12 +1,16 @@
 /* assets/css/style.css */
+
 :root {
-  --background: #f8f9fa;
-  --text: #212529;
-  --accent: #4361ee;
+  --background: #f4f6f9;
+  --text: #1f1f1f;
+  --accent: #0077b6;       /* Ocean blue */
   --muted: #6c757d;
   --light-bg: #ffffff;
   --border: #dee2e6;
-  --highlight: #e9ecef;
+  --highlight: #e9f1f7;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  --radius: 12px;
+  --font-main: 'Inter', 'Segoe UI', -apple-system, sans-serif;
 }
 
 * {
@@ -16,26 +20,27 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-main);
+  background: var(--background);
   color: var(--text);
-  background-color: var(--background);
+  line-height: 1.7;
 }
 
+/* Container */
 .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem 1rem;
 }
 
 /* Header */
 .site-header {
-  background-color: var(--light-bg);
-  padding: 1rem 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background: var(--light-bg);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .site-header .container {
@@ -45,9 +50,9 @@ body {
 }
 
 .site-title {
-  font-size: 1.5rem;
-  color: var(--text);
+  font-size: 1.8rem;
   font-weight: 700;
+  color: var(--accent);
 }
 
 .site-nav {
@@ -59,60 +64,64 @@ body {
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
   color: var(--accent);
 }
 
-/* Main content */
+/* Main Section */
 .site-main {
-  padding: 2rem 0 4rem;
+  padding-bottom: 5rem;
 }
 
 section {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 h1, h2, h3 {
   margin-bottom: 1rem;
+  font-weight: 600;
   line-height: 1.3;
 }
 
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
 }
 
 h2 {
-  font-size: 1.75rem;
-  margin-top: 2.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
+  font-size: 1.8rem;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 0.8rem;
 }
 
 h3 {
   font-size: 1.4rem;
-  margin-top: 2rem;
+  color: var(--text);
 }
 
 p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+  font-size: 1rem;
 }
 
-/* Visualizations */
+/* Visuals */
 .viz-container {
-  background-color: var(--light-bg);
-  border-radius: 6px;
+  background: var(--light-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 2.5rem 0;
   overflow: hidden;
-  margin: 2rem 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .viz-img {
   width: 100%;
-  height: auto;
   display: block;
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 
 .viz-caption {
@@ -122,55 +131,66 @@ p {
   border-top: 1px solid var(--border);
 }
 
-/* Map section */
-.map-container {
-  height: 500px;
+/* iFrames */
+.viz-frame {
   width: 100%;
-  position: relative;
-  margin: 2rem 0;
+  height: 600px;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-top: 1rem;
+}
+
+/* Map Box */
+.map-container {
+  margin: 2.5rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .map-container iframe {
   width: 100%;
-  height: 100%;
+  height: 500px;
   border: none;
 }
 
-/* Conclusion section */
-.conclusion {
-  background-color: var(--highlight);
-  padding: 2rem;
-  border-radius: 6px;
+/* Highlight Box */
+.conclusion, .highlight-box {
+  background: var(--highlight);
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius);
   margin-top: 3rem;
-}
-
-.conclusion h2 {
-  border-bottom: none;
-  margin-top: 0;
 }
 
 /* Footer */
 .site-footer {
   text-align: center;
-  padding: 2rem 0;
-  color: var(--muted);
   font-size: 0.9rem;
+  color: var(--muted);
+  padding: 3rem 1rem;
+  background-color: var(--light-bg);
   border-top: 1px solid var(--border);
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .site-header .container {
     flex-direction: column;
     gap: 0.75rem;
     text-align: center;
   }
-  
+
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
-  
+
   h2 {
     font-size: 1.5rem;
+  }
+
+  .viz-frame, .map-container iframe {
+    height: 400px;
   }
 }
