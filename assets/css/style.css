@@ -1,38 +1,22 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fdfdfd;
-    color: #333;
-    line-height: 1.6;
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  h1, h2, h3 {
-    color: #1a73e8;
-  }
-  
-  a {
-    color: #d63384;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  ul {
-    padding-left: 1.2rem;
-  }
-  
-  code {
-    background: #eee;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-family: monospace;
-  }
-  
-  hr {
-    margin: 2rem 0;
-  }
-  
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    <!-- 🔧 TEST LINE -->
+    <p style="color: red; font-weight: bold;">🔧 This layout is working!</p>
+
+    {% include header.html %}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {% include footer.html %}
+  </body>
+</html>
